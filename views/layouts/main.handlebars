@@ -10,17 +10,22 @@
 
 <body>
   <header class="display-flex justify-space-between align-center p-2">
-    <h1>
-      User Registry
-    </h1>
+    <a href="/">Home</a>
+    <a href="/">Dashboard</a> 
+    <a href="/">Login</a>
+    {{!-- Add where Dashboard will link to in href should go --}}
     {{#if logged_in}}
     <nav>
       <button class="btn" id="logout">logout</button>
     </nav>
     {{/if}}
+    <h1>
+      THE TECH BLOG
+    </h1>
   </header>
   <main class="container container-fluid mt-5">
     {{{ body }}}
+    {{!-- Add previous blog posts html here --}}
   </main>
   <footer>
       
