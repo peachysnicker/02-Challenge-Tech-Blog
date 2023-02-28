@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Registry</title>
+  <title>THE TECH BLOG</title>
   <link rel="stylesheet" href="/css/jass.css">
 </head>
 
@@ -12,11 +12,13 @@
   <header class="display-flex justify-space-between align-center p-2">
     <a href="/">Home</a>
     <a href="/">Dashboard</a> 
-    <a href="/">Login</a>
+   
     {{!-- Add where Dashboard will link to in href should go --}}
     {{#if logged_in}}
     <nav>
       <button class="btn" id="logout">logout</button>
+       {{ else }}
+     <a id="login" href="/">Sign In</a> 
     </nav>
     {{/if}}
     <h1>
@@ -24,8 +26,8 @@
     </h1>
   </header>
   <main class="container container-fluid mt-5">
-    {{{ body }}}
-    {{!-- Add previous blog posts html here --}}
+    {{!-- {{{ body }}} --}} 
+    {{!-- Add previous blog posts html here  {{ body }} currently renders the log in fields--}}
   </main>
   <footer>
       
