@@ -14,5 +14,17 @@
 
 {{/each }}
 
-{{!-- If logged in they can add new blog --}}
 {{!-- add form to fill out for new blog post --}}
+  <div class="col-8">
+      <form id="articleForm" class="form">
+        <input id="blogId" />
+        <input id="blogTitle" placeholder="Blog Title" type="text"/>
+        <textarea id="blogText" placeholder="Blog Text"></textarea>
+        <div>
+          <!-- Submit button -->
+          <button type="submit" id="saveBlog">Save</button>
+          {{!-- New addition button - not sure how to get that working for another input  --}}
+          <button type="submit" id='newBlog'>New</button>
+        </div>
+      </form>
+    </div>
