@@ -1,0 +1,9 @@
+{{!-- Display previous blogs here from blogPosts.json --}}
+
+<div>
+    <div id="previous-blogs">
+           {{#each blogs as |blog|}}
+          {{> dashboard-blog}}
+          {{/each}}
+    </div>
+</div>
