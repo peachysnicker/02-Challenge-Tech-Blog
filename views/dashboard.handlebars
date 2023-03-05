@@ -1,9 +1,20 @@
-{{!-- Display previous blogs here from blogPosts.json --}}
-
+{{!-- Display previous blogs here from user --}}
 <div>
-    <div id="previous-blogs">
-           {{#each blogs as |blog|}}
-          {{> dashboard-blog}}
-          {{/each}}
-    </div>
+    <p>Welcome back {{name}}!</p>
+   
 </div>
+{{!-- Display each of their blogs --}}
+
+{{#each blogs}}
+
+<div id="user-post">
+    <h2>{{title}}</h2>
+    <p>{{content}}</p>
+</div>
+
+{{/each }}
+
+{{!-- If logged in they can add new blog --}}
+{{#if logged_in}}
+{{!-- Not sure how to do that yet --}}
+{{/if}}
