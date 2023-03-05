@@ -18,7 +18,7 @@
     <nav>
       <button class="btn" id="logout">logout</button>
        {{ else }}
-     <a id="login" href="/">Sign In</a> 
+     <a id="login" href="/">Log In</a> 
     </nav>
     {{/if}}
     <h1>
@@ -26,8 +26,11 @@
     </h1>
   </header>
   <main class="container container-fluid mt-5">
-    {{!-- {{{ body }}} --}} 
-    {{!-- Add previous blog posts html here  {{ body }} currently renders the log in fields--}}
+    <div>
+    <h2>Previous Blog Posts</h2>
+    <div id="blog-posts">
+        {{{ body }}} 
+    </div>
   </main>
   <footer>
       
