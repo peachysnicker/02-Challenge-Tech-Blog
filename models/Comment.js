@@ -15,7 +15,7 @@ Comment.init({
         allowNull:false,
       
     },
-    article_id: {
+    comment_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
