@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { User } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', withAuth, async (req, res) => { //need to be authorized that log in is true
+router.get('/', withAuth, async (req, res) => { 
   try {
     const userData = await User.findAll({
       attributes: { exclude: ['password'] },
@@ -22,7 +22,7 @@ router.get('/', withAuth, async (req, res) => { //need to be authorized that log
 
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
-    res.redirect('/');
+    res.redirect('/'); 
     return;
   }
 
