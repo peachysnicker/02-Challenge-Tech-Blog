@@ -1,6 +1,8 @@
 const router = require('express').Router();
-const { User } = require('../models');
+const { User, Blog } = require('../models');
 const withAuth = require('../utils/auth');
+
+// Get dashboard when logged in is confirmed 
 
 router.get('/', withAuth, async (req, res) => { 
   try {
@@ -11,7 +13,7 @@ router.get('/', withAuth, async (req, res) => {
 
     const users = userData.map((project) => project.get({ plain: true })); //remove special characters
 
-    res.render('homepage', { //then it will render the homepage
+    res.render('dashboard', { //then it will render the dashboard to view your blogs and add new
       users,
       logged_in: req.session.logged_in, //will this render your session data?
     });
@@ -28,5 +30,6 @@ router.get('/login', (req, res) => {
 
   res.render('login');
 });
+
 
 module.exports = router;
