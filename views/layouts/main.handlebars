@@ -14,13 +14,13 @@
     <a href="/dashboard">Dashboard</a> 
    
     {{!-- Add where Dashboard will link to in href should go --}}
-    {{!-- {{#if logged_in}} --}}
+    {{#if logged_in}}
     <nav>
       <button class="btn" id="logout">logout</button>
-       {{!-- {{ else }} --}}
+       {{ else }}
      <a id="login" href="/login">Log In</a> 
     </nav>
-    {{!-- {{/if}} --}}
+    {{/if}}
     <h1>
       THE TECH BLOG
     </h1>
@@ -28,7 +28,6 @@
   <main class="container container-fluid mt-5">
     <div>
       <h2>MAIN.HANDLEBARS</h2>
-    <h2>Previous Blog Posts</h2>
     <div id="blog-posts">
         {{{ body }}} 
     </div>
