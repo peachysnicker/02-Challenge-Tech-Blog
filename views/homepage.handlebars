@@ -1,17 +1,44 @@
   {{!-- Display previous blog posts from seed --}}
   
-  <h2>THIS IS MY HOMEPAGE.HANDLEBARS to see all blogs </h2>
-   <section class="flex-row justify-center">
-  {{!-- {{#IF logged_in }}
-    {{#each blogs}}
-    <p> {{ title }} </p>
-    <p> {{ content }} </p>
-    {{/each}} --}}
+  <h2>THIS IS MY HOMEPAGE.HANDLEBARS</h2>
+  <h2>Blogs</h2>
+   <section class="blogs">
+      {{#each blogs}}
+        <p class="title"><b>{{ title }}</b></p>
+        <p class="content"> {{ content }} </p>
+      {{/each}}
 
-    {{!-- add comment feature when logged in --}}
-    <h2>If logged in see h2 below if logged out then nothing</h2>
-    <h2>ADD COMMENT HERE WHEN LOGGED IN</h2>
-   {{!-- {{/IF}} --}}
+    {{#if logged_in}}
+    {{!-- <h4>If logged in see h2 below if logged out then nothing</h4> --}}
+     <h4 class="pt-5">ADD COMMENT HERE WHEN LOGGED IN</h4>
+         <div class="p-3">
+       <p> Add Comment</p>
+       
 
+      <div class="">
+            <form class="">
+          <!-- userID input -->
+          <div class="">
+            <input type="hidden" id="commentUserId" class="form-control" value={{ userId }} />
+          </div>       
+          <!-- article_id -->
+          <div class="">
+            <input type="hidden" id="commentArticleId" class="form-control" value={{ blog.id }} />
+          </div>     
+          <!-- text input -->
+          <div class="">
+            <label class="" for="commentText">Comment:</label>
+            <textarea rows="3" id="commentText" class="form-control " placeholder="Min 10 characters"/></textarea>
+          </div>
+          <div class="">
+
+            <!-- Submit button -->
+            <button type="submit" id="addComment" class="">Add</button>
+            <button type="cancel" id='cancelComment' class="">Cancel</button>
+          </div>
+
+        </form>
+      </div>
+    {{/if}}
   </section>
 
