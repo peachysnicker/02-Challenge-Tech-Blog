@@ -1,11 +1,15 @@
   {{!-- Display previous blog posts from seed --}}
   
-  <h2>THIS IS MY HOMEPAGE.HANDLEBARS</h2>
   <h2>Blogs</h2>
-   <section class="blogs">
+   <section class="blogs m-4 p-4">
       {{#each blogs}}
         <p class="title"><b>{{ title }}</b></p>
         <p class="content"> {{ content }} </p>
+
+    <div>
+       <h4 class="bg-light">Comment text</h4>
+      {{ comment.text }}
+    </div>
       {{/each}}
 
     {{#if logged_in}}

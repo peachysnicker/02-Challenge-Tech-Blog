@@ -46,6 +46,22 @@ router.get('/dashboard', withAuth, async (req, res) => {
     }
 });
 
+// ATTEMPT TO RENDER COMMENTS FROM SEED
+// get one comment with serialized data
+router.get('/comment/:id', async (req, res) => {
+    try {
+    // Search the database for a comment with an id that matches params
+    const commentData = await Comment.findByPk(req.params.id);
+    console.log(commentData)
+    // We use .get({ plain: true }) on the object to serialize it so that it only includes the data that we need. instead of the entire object?
+    const comment = dishData.get({ plain: true });
+    // Then, the 'dish' template is rendered and dish is passed into the template.
+    res.render('homepage', comment);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+  });
+
 // GET login
 router.get('/login', (req, res) => {
     // If the user is already logged in, redirect the request to another route
@@ -55,6 +71,11 @@ router.get('/login', (req, res) => {
     }
     res.render('login');
 });
+
+
+
+
+
 
 
 
