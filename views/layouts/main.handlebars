@@ -9,31 +9,30 @@
 </head>
 
 <body>
-  <header class="display-flex justify-space-between align-center p-2">
-    <a href="/">Home</a>
-    <a href="/dashboard">Dashboard</a> 
-   
-    {{!-- Add where Dashboard will link to in href should go --}}
-    {{#if logged_in}}
-    <nav>
-      <button class="btn" id="logout">logout</button>
+  <header class="">
+    <nav class="row bg-dark">
+        <h1 class="col-3 pt-3" >THE TECH BLOG</h1>
+        <a class="col-3 pt-3" href="/">Home</a>
+        <a class="col-3 pt-3" href="/dashboard">Dashboard</a> 
+       {{#if logged_in}}
+         <button class="btn col-3 pt-3" id="logout">logout</button>
        {{ else }}
-     <a id="login" href="/login">Log In</a> 
+         <a  class="col-3 pt-3" id="login" href="/login">Log In</a> 
+       {{/if}}
     </nav>
-    {{/if}}
-    <h1>
-      THE TECH BLOG
-    </h1>
   </header>
+
   <main class="container container-fluid mt-5">
-    <div>
-      <h2>MAIN.HANDLEBARS</h2>
-    <div id="blog-posts">
+   <div>
+       <h2>MAIN.HANDLEBARS</h2>
         {{{ body }}} 
-    </div>
+   </div>
   </main>
+
   <footer>
-      
+      <div class="row text-center">
+         <p class="col-12 p-5 m-5 bg-dark"><a href="mailto:mariah@gmail.com">mariah@gmail.com</a></p>
+      </div>
   </footer>
 
   {{#if logged_in}}

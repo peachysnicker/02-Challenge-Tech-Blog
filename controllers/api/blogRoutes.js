@@ -23,7 +23,7 @@ router.post('/', withAuth, async (req, res) => {
 // get route for rendering post.handlebars
 router.get('/blogs', withAuth, async (req, res) => {
     try {
-        res.render('post', {
+        res.render('blogs', {
             logged_in: req.session.logged_in
         });
     } catch (err) {
