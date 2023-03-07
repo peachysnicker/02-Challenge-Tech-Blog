@@ -1,24 +1,35 @@
 const router = require('express').Router();
 const { Blog } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 
-// GET homepage with blogs seeded already to display
-router.get('/blog', async (req, res) => {
+// POST for creation new blog
+router.post('/', withAuth, async (req, res) => {
     try {
-        const blogData = await Blog.findAll({
-            attributes: ['title', 'content'],
+        const newBlog = await Blog.create({
+            ...req.body,
+            user_id: req.session.user_id,
         });
 
-        const blogs = blogData.map((blog) => blog.get({ plain: true }));
+        res.status(200).json(newBlog);
+    } catch (err) {
+        res.status(400).json(err);
+    }
+});
 
-        res.render('blog', {
-            blogs,
+
+
+
+// get route for rendering post.handlebars
+router.get('/blogs', withAuth, async (req, res) => {
+    try {
+        res.render('post', {
             logged_in: req.session.logged_in
         });
     } catch (err) {
-        console.log(err);
         res.status(500).json(err);
     }
 });
+
 
 module.exports = router;

@@ -1,17 +1,17 @@
   {{!-- Display previous blog posts from seed --}}
   
+  <h2>THIS IS MY HOMEPAGE.HANDLEBARS to see all blogs </h2>
    <section class="flex-row justify-center">
-    <h2>THIS IS MY HOMEPAGE.HANDLEBARS to see all blogs </h2>
+  {{!-- {{#IF logged_in }}
     {{#each blogs}}
     <p> {{ title }} </p>
     <p> {{ content }} </p>
-    {{/each}}
+    {{/each}} --}}
 
     {{!-- add comment feature when logged in --}}
     <h2>If logged in see h2 below if logged out then nothing</h2>
-    {{#IF logged_in }}
     <h2>ADD COMMENT HERE WHEN LOGGED IN</h2>
-    {{/IF}}
+   {{!-- {{/IF}} --}}
 
   </section>
 

@@ -4,7 +4,7 @@ const loginFormHandler = async (event) => {
   const email = document.querySelector('#email-login').value.trim();
   const password = document.querySelector('#password-login').value.trim();
 
-  if (email && password) { //make sure not empty
+  if (email && password) { //make sure not empty - && means both must have value
     const response = await fetch('/api/users/login', {
       method: 'POST',
       body: JSON.stringify({ email, password }),
@@ -12,7 +12,7 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/'); //if ok go to the homepage
+      document.location.replace('/dashboard'); //if ok go to the dashboard view
     } else {
       alert('Failed to log in');
     }

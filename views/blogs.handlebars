@@ -1,44 +1,17 @@
 <div class="row">
   <div class="col-auto">
-    <h2>Welcome, {{name}}!</h2>
+    <h2>THIS IS MY BLOGS.HANDLEBARS</h2>
   </div>
 </div>
-
-<div class="row mt-4">
-  <div class="col-md-6">
-    <h3>Create a New Blog:</h3>
-
-    <form class="form new-blog-form">
-      <div class="form-group">
-        <label for="blog-name">Blog name:</label>
-        <input class="form-input" type="text" id="blog-name" name="blog-name" />
-      </div>
-      <div class="form-group">
-        <label for="blog-content">Blog content:</label>
-        <input class="form-input" type="text" id="blog-content" name="blog-content" />
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
-      </div>
+{{!-- form to create a new blogpost including inputs for title and content --}}
+<div class="new-post" id="new-post">
+    <h2>Create a new post</h2>
+    <form action="/api/blogs" method="POST" class="new-blog-form">
+        <label for="title">Title</label>
+        <input type="text" name="title" id="blog-title">
+        <label for="content">Content</label>
+        <input type="text" name="content" id="blog-content">
+        <button type="submit">Submit</button>
     </form>
-  </div>
-
-  {{#if blogs.length}}
-  <div class="col-md-6 project-list">
-    <h3>Current Blogs:</h3>
-
-    {{#each blogs as |blog|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/project/{{blog.id}}">{{blog.name}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{blog.id}}">DELETE</button>
-      </div>
-    </div>
-    {{/each}}
-  </div>
-  {{/if}}
 </div>
-
-<script src="./js/profile.js"></script>
+  <script src="/js/dashboard.js"></script>
