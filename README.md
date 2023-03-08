@@ -8,14 +8,12 @@ Build a CMS-style blog site similar to a Wordpress site, where developers can pu
 
 ## User Story
 
-```md
+
 AS A developer who writes about tech
 I WANT a CMS-style blog site
 SO THAT I can publish articles, blog posts, and my thoughts and opinions
-```
 
 
-```
 
 ## Getting Started
 
